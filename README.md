@@ -2,9 +2,7 @@
 
 This is is a simulator of continuous memory algorithms:
 
-   * first fit
    * best fit
-   * worst fit
 
 Each algorithm receives three parameters:
    * `mem_avail`: a list of tuples, base and limit.
@@ -70,15 +68,6 @@ python cma.py --memmap .\resources\memmap\memmap_1.txt --reqs .\resources\reqs\r
 
 The previous execution executes all algorithms you can change to execute different algorithm.
 
-### To execute the first algorithm.
-
-```shell
-python3 cma.py --memmap .\resources\memmap\memmap_1.txt --reqs .\resources\reqs\req_1.txt --function first
-```
-
-```shell
-python cma.py --memmap .\resources\memmap\memmap_1.txt --reqs .\resources\reqs\req_1.txt --function first
-```
 
 ### To execute the best algorithm.
 
@@ -90,15 +79,6 @@ python3 cma.py --memmap .\resources\memmap\memmap_1.txt --reqs .\resources\reqs\
 python cma.py --memmap .\resources\memmap\memmap_1.txt --reqs .\resources\reqs\req_1.txt --function best
 ```
 
-### To execute the worst algorithm.
-
-```shell
-python3 cma.py --memmap .\resources\memmap\memmap_1.txt --reqs .\resources\reqs\req_1.txt --function worst
-```
-
-```shell
-python cma.py --memmap .\resources\memmap\memmap_1.txt --reqs .\resources\reqs\req_1.txt --function worst
-```
 
 ### To execute in different possition
 
