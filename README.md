@@ -1,21 +1,33 @@
 # (C)ontinuous (M)emory (A)lgorithms (cma)
 
-This is is a simulator of continuous memory algorithms:
+This code implements a memory allocation simulator using the Best Fit algorithm. The program reads a file describing the available memory blocks and another file with memory requests. Then, it allocates memory to each request using the Best Fit algorithm and displays the memory status after each allocation.
 
-   * best fit
+## Best Fit Algorithm
+Select the smallest memory block that can satisfy the request. If the block is fully used, it is removed from the list of available blocks. If there is remaining space, the block is updated with the new size.
 
-Each algorithm receives three parameters:
+Algorithm receives parameters:
    * `mem_avail`: a list of tuples, base and limit.
    * `req`: a size request for memory.
    * `index` position on the `mem_avail`. This is a circular index: `(index % len(mem_avail))`.
 
-Each algorithm returns two possible values: `None` if the
+Possible values ​​of the algorithm: 
+
+`None` if the
 request cannot be fulfilled, or a quadruple:
    * `mem_avail`: a list of tuples of memory that are newly available (could be empty).
    * `base`: new base where the requested process start.
    * `limit`: new limit.
    * `index`: an index on the `mem_avail` where the request was found. If the
      memory were exhausted, the next valid position would be available.
+
+### Requirements
+Python 3.x: Make sure you have Python installed on your system.
+
+Dependencies: Install the required dependencies by running
+```shell
+pip install -r requirements.txt
+```
+
 
 ## Test
 
@@ -34,14 +46,14 @@ Windows
 SET PYTHONPATH=%PYTHONPATH%;<path-of-your-project>
 ```
 
-Running the test, replace with the name of your algorithm implementation: `first`, `best`, `worst`.
+Running the test.
 
 ```shell
-python3 -m unittest test/test_basic_<your_algorithm>_fit.py
+python3 -m unittest test/test_basic_best_fit.py
 ```
 
 ```shell
-python -m unittest test/test_basic_<your_algorithm>_fit.py
+python -m unittest test/test_basic_best_fit.py
 ```
 
 ## Execute cma simulator
@@ -65,8 +77,6 @@ python3 cma.py --memmap .\resources\memmap\memmap_1.txt --reqs .\resources\reqs\
 ```shell
 python cma.py --memmap .\resources\memmap\memmap_1.txt --reqs .\resources\reqs\req_1.txt
 ```
-
-The previous execution executes all algorithms you can change to execute different algorithm.
 
 
 ### To execute the best algorithm.
