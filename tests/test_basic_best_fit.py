@@ -1,10 +1,10 @@
-# Tests
+#Tests
 import unittest
 from cont_mem_algos import best_fit
 
 class TestBasicBestFit(unittest.TestCase):
 
-    def test_pass_empty_map(self):
+    def test_pass_empty_map(self): 
         work_memory = []
         req = 0
         index = 0
@@ -25,6 +25,7 @@ class TestBasicBestFit(unittest.TestCase):
         search = best_fit(work_memory, req, index)
         self.assertEqual(search, None)
 
+    # FALLA
     def test_req_choose_last_index(self):
         work_memory = [(0x00A00000, 0x000C0000), (0x00B00000, 0x000C0000), (0x00C00000, 0x000D0000)]
         req = 0x000D0000
@@ -78,6 +79,7 @@ class TestBasicBestFit(unittest.TestCase):
         search = best_fit(work_memory, req, index)
         self.assertEqual(len(search[0]), len_work_memory - 1)
 
+    # FALLA
     def test_req_choose_best_fit_index(self):
         work_memory = [(0x00A00000, 0x000D0A0), (0x00B00000, 0x000D000A), (0x00C00000, 0x000D0000)]
         req = 0x000D0000
