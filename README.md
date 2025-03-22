@@ -1,8 +1,9 @@
 # (C)ontinuous (M)emory (A)lgorithms (cma)
 
-## Best Fit Algorithm
 This code implements a memory allocation simulator using the Best Fit algorithm. The program reads a file describing the available memory blocks and another file with memory requests. Then, it allocates memory to each request using the Best Fit algorithm and displays the memory status after each allocation.
 
+## Best Fit Algorithm
+Select the smallest memory block that can satisfy the request. If the block is fully used, it is removed from the list of available blocks. If there is remaining space, the block is updated with the new size.
 
 Algorithm receives parameters:
    * `mem_avail`: a list of tuples, base and limit.
@@ -19,7 +20,7 @@ request cannot be fulfilled, or a quadruple:
    * `index`: an index on the `mem_avail` where the request was found. If the
      memory were exhausted, the next valid position would be available.
 
-### Requisitos
+### Requirements
 Python 3.x: Make sure you have Python installed on your system.
 
 Dependencies: Install the required dependencies by running
